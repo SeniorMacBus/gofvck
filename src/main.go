@@ -28,12 +28,6 @@ func main() {
 		return
 	}
 
-	fmt.Println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-	fmt.Println(tokens)
-	fmt.Println(loop_start)
-	fmt.Println(loop_end)
-	fmt.Println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<")
-
 	// Executing operations
 	executor.Execute(tokens, buffer, loop_start, loop_end)
 

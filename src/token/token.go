@@ -56,7 +56,7 @@ func (t Token) Inc(v *uint8) {
 	if *v+uint8(t.Value) <= 255 {
 		*v += uint8(t.Value)
 	} else {
-		*v = *v + uint8(t.Value) - 255
+		*v = *v + uint8(t.Value) - 255 - 1
 	}
 }
 
@@ -65,13 +65,15 @@ func (t Token) Dec(v *uint8) {
 	if *v-uint8(t.Value) >= 0 {
 		*v -= uint8(t.Value)
 	} else {
-		*v = *v + 255 - uint8(t.Value)
+		*v = *v + 255 - uint8(t.Value) + 1
 	}
 }
 
 func (t Token) Print_value(c byte) {
 	// prints out the value under the value pointer
-	fmt.Printf("%c", c)
+	for i := 0; uint64(i) < t.Value; i++ {
+		fmt.Printf("%c", c)
+	}
 }
 
 func (t Token) Jump_if_zero(v uint8, i *int, d uint64) {
