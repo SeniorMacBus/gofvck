@@ -5,6 +5,7 @@ import (
 	"gofvck/executor"
 	"gofvck/parser"
 	"gofvck/tokenizer"
+	"gofvck/writer"
 	"os"
 )
 
@@ -30,5 +31,7 @@ func main() {
 
 	// Executing operations
 	executor.Execute(tokens, buffer, loop_start, loop_end)
+
+	writer.WriteTokens(tokens)
 
 }

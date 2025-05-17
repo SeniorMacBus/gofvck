@@ -7,6 +7,10 @@ import (
 	"os"
 )
 
+// func checkModification(f *os.File) (bool, error) {
+
+// }
+
 func ReadSource(file_name string) ([]byte, error) {
 	f, err := os.Open(file_name)
 	if err != nil {
